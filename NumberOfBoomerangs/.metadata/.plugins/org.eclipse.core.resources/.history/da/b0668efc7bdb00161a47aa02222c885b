@@ -1,0 +1,9 @@
+package Snippet;
+import java.util.*;
+
+public class Boomerangs {
+	
+	private double getDistance(int a[], int []b){
+		return Math.pow(a[0]-b[0],2)
+	}
+}

@@ -1,0 +1,10 @@
+package Snippet;
+import java.util.*;
+public class LongestPalindrome {
+	
+	public int longestPalindrome(String s){
+		HashMap<Character, Integer> charCount = new HashMap<>();
+		
+	}
+	
+}

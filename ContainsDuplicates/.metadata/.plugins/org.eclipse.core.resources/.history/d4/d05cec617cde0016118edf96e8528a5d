@@ -1,0 +1,12 @@
+package Snippet;
+import java.util.*;
+
+public class ContainsDups {
+	
+	public boolean isDups(int nums[]){
+		HashSet<Integer> elements = new HashSet<>();
+		for(int i: nums){
+			
+		}
+	}
+}

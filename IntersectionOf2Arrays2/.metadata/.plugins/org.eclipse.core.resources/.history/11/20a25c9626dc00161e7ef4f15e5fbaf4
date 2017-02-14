@@ -1,0 +1,18 @@
+package Snippet;
+import java.util.HashMap;
+
+public class ArrayIntersection2 {
+	
+	public int [] intersect(int nums1[], int nums2[]){
+		HashMap<Integer, Integer>nums1Count = new HashMap<>();
+		for(int i: nums1){
+			nums1Count.put(i, nums1Count.getOrDefault(i,0)+1);
+		}
+		ArrayList<>
+		for(int i: nums2){
+			if(nums1Count.containsKey(i)){
+				
+			}
+		}
+	}
+}

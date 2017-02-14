@@ -1,0 +1,33 @@
+package Snippet;
+
+public class CountPrimes {
+	
+	public int countPrimes(int n){
+		if(n == 3 ){ return 2; }
+		if(n==2){ return 1; }
+		if(n<=1){ return 0; }
+		boolean [] isPrime = new boolean[n+1];
+		for(int i=0;i<=n;i++){
+			isPrime[i] = true;
+		}
+		int loopIndex= (int)Math.sqrt(n);
+		for(int i=2;i<=loopIndex;i++){
+			if(isPrime[i] != false){
+				int num = (i*i);
+				while(num <= n){
+					if(isPrime[num] != false){ isPrime[num] = false; }
+					num = (num+i);
+				}
+			}
+		}
+		int count = 0;
+		for(boolean b: isPrime){
+			if(b!=false){++count; }
+		}
+		return count-2;
+	}
+	
+	public static void main(String args[]){
+		System.out.println(new CountPrimes().countPrimes(10000000000000));
+	}
+}

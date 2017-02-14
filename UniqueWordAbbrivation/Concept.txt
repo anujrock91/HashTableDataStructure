@@ -1,0 +1,5 @@
+for the input word:
+
+1. if the same word occurs twice its occurance is considered only once.
+2. if a new word comes in check if there is a similar abbrivation.
+3. if an existing word comes in check its decision. 

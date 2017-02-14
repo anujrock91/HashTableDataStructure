@@ -1,0 +1,8 @@
+package Snippet;
+
+public class ArrayIntersection1 {
+	
+	public int[] intersect(int [] nums1, int[] nums2){
+		
+	}
+}

@@ -1,0 +1,34 @@
+package Snippet;
+import java.util.*;
+
+public class IsoMorphicStrings {
+	
+	public boolean isIsoMorphic(String pattern, String text){
+		HashMap<Character,Character> mapping = new HashMap<>();
+		if(pattern.length() != text.length()){
+			return false;
+		}
+		else{
+			for(int i=0;i<pattern.length();i++){
+				char c1 = pattern.charAt(i);
+				char c2 = text.charAt(i);
+				if(mapping.containsKey(c1)){
+					if(mapping.get(c1) != c2){ return false; }
+					continue;
+				}
+				else{
+					if(mapping.containsValue(c2)){ return false; }
+					else{  mapping.put(c1, c2); }
+				}
+			}
+			return true;
+		}//if-else
+	}
+	
+	
+	public static void main(String args[]){
+		System.out.println(new IsoMorphicStrings().isIsoMorphic("abca", "defe"));
+	}
+	
+	
+}

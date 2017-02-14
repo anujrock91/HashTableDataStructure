@@ -1,0 +1,36 @@
+package Snippet;
+import java.util.HashMap;
+
+public class SubStringWithConcatenation {
+	
+	public List<Integer> findSubString(String s, String []words){
+		HashMap<String, Integer> givenWords = new HashMap<>();
+		for(String word: words){
+			givenWords.put(word, 1);
+		}
+		int len = words[0].length();
+		
+		//Looping for len times
+		for(int i=0;i<len;i++){
+			HashMap<String, Integer> wordCount = new HashMap<>();
+			int start = i;
+			for(int j=i;j<s.length();j=j+len){
+				String section = s.substring(j,j+len);
+				//Either it is a valid string to consider or Not
+				if(givenWords.containsKey(section)){
+					wordCount.put(section, wordCount.getOrDefault(section, 0)+1);
+					if(wordCount.get(section) > givenWords.get(section)){
+						j = j-len;
+						int value = wordCount.get(section)-1;
+					}
+					
+				}
+				else{
+					wordCount.clear();
+					j=j+len;
+				}
+			}
+		}
+	}
+
+}

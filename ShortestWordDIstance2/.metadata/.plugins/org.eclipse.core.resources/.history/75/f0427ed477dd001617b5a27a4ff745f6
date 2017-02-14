@@ -1,0 +1,33 @@
+package Snippet;
+import java.util.*;
+
+public class ShortestWordDistance2 {
+	HashMap<String, ArrayList<Integer>> wordIndex = new HashMap<>();
+	
+	public ShortestWordDistance2(String [] arr){
+		for(int i=0;i<arr.length;i++){
+			if(wordIndex.containsKey(arr[i])){
+				wordIndex.get(arr[i]).add(i);
+			}
+			else{
+				ArrayList<Integer> newList = new ArrayList<>();
+				newList.add(i);
+				wordIndex.put(arr[i], newList);
+			}
+		}
+	}
+	
+	public int shortestDistance(String word1,String word2){
+		ArrayList<Integer> word11ist = wordIndex.get(word1);
+		ArrayList<Integer> word21ist = wordIndex.get(word2);
+		int min = Integer.MAX_VALUE;
+		int upperPointer = 0;
+		int lowerPointer = 0;
+		while(upperPointer<word11ist.size() && lowerPointer<word21ist.size()){
+			min = Math.min(min, Math.abs(word11ist.get(upperPointer)-word21ist.get(lowerPointer))) ;
+			if(word1list)
+		}
+	}
+	
+	
+}

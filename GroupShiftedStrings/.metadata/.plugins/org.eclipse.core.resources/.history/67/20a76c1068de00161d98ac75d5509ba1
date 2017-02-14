@@ -1,0 +1,13 @@
+package Snippet;
+
+public class GroupShiftedStrings {
+	
+	public List<List<String>> getGroupShifted(String[] list){
+		
+	}
+	
+	public String getPattern(String s){
+		
+	}
+	
+}

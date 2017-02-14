@@ -1,0 +1,7 @@
+package Snippet;
+
+public class LongestPalindrome {
+	
+	public int longestPalindrome()
+	
+}

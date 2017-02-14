@@ -1,0 +1,66 @@
+package Snippet;
+import java.util.*;
+import java.util.Map.Entry;
+
+public class WordPattern {
+	
+	
+	public boolean wordPattern(String pattern, String str) {
+	    String[] arr = str.split(" ");  
+	 
+	    //prevent out of boundary problem
+	    if(arr.length != pattern.length())
+	        return false;
+	 
+	    HashMap<Character, String> map = new HashMap<Character, String>();
+	    for(int i=0; i<pattern.length(); i++){
+	        char c = pattern.charAt(i);
+	        if(map.containsKey(c)){
+	            String value = map.get(c);
+	            if(!value.equals(arr[i])){
+	                return false;
+	            }
+	        }else if (map.containsValue(arr[i])){
+	            return false;
+	        }
+	        map.put(c, arr[i]);
+	    }
+	 
+	    return true;
+	}
+	
+	
+	public boolean isValidPattern(String pattern, String text){
+		String [] split = text.split(" ");
+		if(split.length != pattern.length()){
+			return false;
+		}
+		String patternTemp=""; String textTemp = "";
+		LinkedHashMap<String, String> map = new LinkedHashMap<>();
+		for(int i=0;i<pattern.length();i++){
+			String c = ""+pattern.charAt(i);
+			map.put(c, map.getOrDefault(c, "")+i);
+		}
+		for(Entry<String, String>e: map.entrySet() ){
+			patternTemp = patternTemp + e.getValue() + "/";
+		}
+		map.clear();
+		for(int i=0;i<split.length;i++){
+			String c = split[i].trim();
+			map.put(c, map.getOrDefault(c, "")+i);
+		}
+		for(Entry<String, String>e: map.entrySet() ){
+			textTemp = textTemp + e.getValue()+"/";
+		}
+		
+		return textTemp.equals(patternTemp);
+	}
+	
+	
+	
+	public static void main(String []args){
+		System.out.println(new WordPattern().isValidPattern("abba", "cow dog  dog cow"));
+		System.out.println(new WordPattern().wordPattern("abba", "cow dog  dog cow"));
+	}
+	
+}

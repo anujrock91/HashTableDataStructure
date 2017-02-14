@@ -1,0 +1,20 @@
+package Snippet;
+import java.util.*;
+
+public class FourSum2 {
+	
+	public int fourSumCount(int[] A, int[] B, int[] C, int[] D){
+		HashMap<Integer, Integer> record = new HashMap<>();
+		for(int i=0;i<A.length;i++){
+			for(int j=0;j<B.length;j++){
+				int sum = (A[i]+B[j]);
+				if(record.containsKey(sum)){ int value = record.remove(sum)+1; record.put(sum, value); }
+				else{ record.put(sum, 1); } 
+			}
+		}
+		
+		
+	}
+	
+	
+}

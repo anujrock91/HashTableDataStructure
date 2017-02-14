@@ -1,0 +1,89 @@
+package Snippet;
+import java.util.*;
+
+public class PalindromePairs {
+	
+	public List<List<Integer>> getPalindromePairs(String [] words){
+		HashMap<String, Integer> wordIndex = new HashMap<>();
+		ArrayList<List<Integer>> result = new ArrayList<>();
+		for(int i=0;i<words.length;i++){
+			String word = words[i];
+			wordIndex.put(word, i);
+		}
+		//for each word
+		for(int i=0;i<words.length;i++){
+			String s = words[i];
+			//check if the reverse exists
+			StringBuilder sb = new StringBuilder(s);
+			String reverse = sb.reverse().toString();
+			if(wordIndex.containsKey(reverse) && !reverse.equalsIgnoreCase(s)){
+				ArrayList<Integer> temp = new ArrayList<>();
+				temp.add(i);
+				temp.add(wordIndex.get(reverse));
+				result.add(temp);
+			} 
+			//check if the word itself is a palindrome then if a black String exists
+			if(isPalindrome(s) && wordIndex.containsKey("")){ 
+				ArrayList<Integer> temp = new ArrayList<>();
+				temp.add(i);
+				temp.add(wordIndex.get(""));
+				result.add(temp);
+			}
+			//check if a string exists such that on prefixing it to left the string becomes a palindrome
+			for(int c=1;c<s.length();c++){ //ignoring if the whole string is a palindrome because it is already considered above
+				if(isPalindrome(s.substring(0,c)) ){
+					sb = new StringBuilder(s.substring(c));
+					String rev = sb.reverse().toString();
+					if(wordIndex.containsKey(rev)){
+						ArrayList<Integer> temp = new ArrayList<>();
+						temp.add(i);
+						temp.add(wordIndex.get(rev));
+						result.add(temp);
+					}
+				}
+			}
+			//check if a string exists such that on appending it to right the string becomes a palindrome
+			for(int c=s.length()-1;c>=0;c--){ //ignoring if the whole string is a palindrome because it is already considered above
+				if(isPalindrome(s.substring(c)) ){
+					sb = new StringBuilder(s.substring(0,c));
+					String rev = sb.reverse().toString();
+					if(wordIndex.containsKey(rev)){
+						ArrayList<Integer> temp = new ArrayList<>();
+						temp.add(i);
+						temp.add(wordIndex.get(rev));
+						result.add(temp);
+					}
+				}
+			}
+			//wordIndex.remove(s);
+		}//End of for loop
+		return result;
+	}
+	
+	
+	
+	private boolean isPalindrome(String s){
+		int left = 0;
+		int right = s.length()-1;
+		while(left <= right){
+			if(s.charAt(left) == s.charAt(right)){
+				++left; --right;
+			}
+			else{
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	
+	public static void main(String args[]){
+		List<List<Integer>> result = new PalindromePairs().getPalindromePairs(new String[]{"abcd", "dcba", "lls", "s", "sssll"});
+		result = new PalindromePairs().getPalindromePairs(new String[]{"a","a"});
+		for(List <Integer>l: result){
+			System.out.println(l);
+		}
+	}
+	
+	
+}

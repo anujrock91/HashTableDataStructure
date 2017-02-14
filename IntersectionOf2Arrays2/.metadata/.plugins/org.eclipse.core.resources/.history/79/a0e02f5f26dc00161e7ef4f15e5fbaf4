@@ -1,0 +1,10 @@
+package Snippet;
+
+public class ArrayIntersection2 {
+	
+	public int [] intersect(int nums1[], int nums2[]){
+		for(int i: nums1){
+			nums1Count.put(i, nums1Count.getOrDefault(i,0)+1);
+		}
+	}
+}

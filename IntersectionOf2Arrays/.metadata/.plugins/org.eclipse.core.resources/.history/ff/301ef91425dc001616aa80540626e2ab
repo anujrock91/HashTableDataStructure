@@ -1,0 +1,6 @@
+package Snippet;
+
+public class ArrayIntersection1 {
+	
+	public int[] intersect()
+}

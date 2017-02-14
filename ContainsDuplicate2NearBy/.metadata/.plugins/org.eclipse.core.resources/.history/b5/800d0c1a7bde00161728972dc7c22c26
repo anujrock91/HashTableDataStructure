@@ -1,0 +1,18 @@
+package Snippet;
+
+import java.util.HashMap;
+
+public class ContainsDuplicates2 {
+	
+	public boolean isNearbyDuplicates(int [] nums, int k){
+		HashMap<Integer,Integer> numIndex = new HashMap<>();
+		for(int i=0;i<nums.length;i++){
+			if(numIndex.containsKey(nums[i])){
+				int pastIndex = numIndex.get(nums[i]);
+			}
+			else{
+				numIndex.put(nums[i],i);
+			}
+		}
+	}
+}

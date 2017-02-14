@@ -1,0 +1,55 @@
+package Snippet;
+import java.util.*;
+
+public class UniqueWordAbbrevation {
+	private HashMap<String,Boolean> wordUnique;
+	private HashSet<String> words;
+	
+	public UniqueWordAbbrevation(String [] list){
+		wordUnique = new HashMap<>();
+		words = new HashSet<>();
+		for(String s: list){
+			words.add(s);
+		}
+		
+		for(String s: words){
+			String abbrevation = "";
+			if(s.length() <=2){
+				abbrevation = s;
+				System.out.println(abbrevation);
+			}
+			else{
+				abbrevation = (abbrevation + s.charAt(0)+ (s.length()-2) + s.charAt(s.length()-1));
+				System.out.println(abbrevation);
+			}
+			if(wordUnique.containsKey(abbrevation)){
+				wordUnique.put(abbrevation, false);
+			}
+			else{
+				wordUnique.put(abbrevation, false);
+			}
+		}
+	}
+	
+	public boolean isUnique(String word){
+		if(words.contains(word)){
+			return wordUnique.get(word);
+		}
+		else{
+			String abbrevation = "";
+			if(word.length() <= 2){ abbrevation = word; }
+			else{ 
+				abbrevation = abbrevation+word.charAt(0)+ (word.length()-2) + word.charAt(word.length()-1);
+			}
+			return wordUnique.containsKey(abbrevation)?false:true;
+		}
+	}
+	
+	
+	public static void main(String args[]){
+		UniqueWordAbbrevation obj = new UniqueWordAbbrevation(new String[]{"deer", "door", "cake", "card"});
+		System.out.println(obj.isUnique("dear") + " " + obj.isUnique("cart") + obj.isUnique("cane")+" " + obj.isUnique("make"));
+	}
+	
+	
+}

@@ -1,0 +1,19 @@
+package Snippet;
+
+public class CountPrimes {
+	
+	public int countPrimes(int n){
+		boolean [] isPrime = new int[n+1];
+		for(int i=0;i<=n;i++){
+			isPrime[i] = true;
+		}
+		int loopIndex= (int)Math.sqrt(n);
+		for(int i=2;i<loopIndex;i++){
+			if(isPrime[i] != false){
+				int num = 0;
+				while(num < )
+			}
+		}
+	}
+	
+}

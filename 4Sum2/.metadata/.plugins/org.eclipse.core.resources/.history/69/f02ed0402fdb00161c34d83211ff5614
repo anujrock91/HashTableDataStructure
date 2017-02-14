@@ -1,0 +1,6 @@
+package Snippet;
+import java.util.*;
+
+public class FourSum2 {
+	
+}

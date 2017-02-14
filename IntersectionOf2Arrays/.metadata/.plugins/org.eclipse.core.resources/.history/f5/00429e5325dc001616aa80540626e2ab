@@ -1,0 +1,14 @@
+package Snippet;
+import java.util.*;
+
+public class ArrayIntersection1 {
+	
+	public int[] intersect(int [] nums1, int[] nums2){
+		HashSet<Integer> set1 = new HashSet<>();
+		for(int i: nums1){
+			set1.add(i);
+		}
+		
+		HashSet<Integer> set2 = new HashSet<>();
+	}
+}

@@ -1,0 +1,24 @@
+package Snippet;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class ArrayIntersection2 {
+	
+	public int [] intersect(int nums1[], int nums2[]){
+		HashMap<Integer, Integer>nums1Count = new HashMap<>();
+		for(int i: nums1){
+			nums1Count.put(i, nums1Count.getOrDefault(i,0)+1);
+		}
+		ArrayList<Integer> temp = new ArrayList<>();
+		for(int i: nums2){
+			if(nums1Count.containsKey(i)){
+				temp.add(i);
+				int value = nums1Count.remove(i);
+				--value;
+				if(value!=0){ nums1Count.put(i, value); }
+			}
+		}
+		
+		int [] res=  new int[temp.size()];
+	}
+}

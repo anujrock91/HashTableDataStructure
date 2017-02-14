@@ -1,0 +1,11 @@
+package Snippet;
+
+public class matrixMultiplication {
+	
+	public int[][] getMatMul(int [][] mat1, int [][] mat2){
+		
+		int res[][]= new int[mat1.length][];
+		
+	}
+	
+}

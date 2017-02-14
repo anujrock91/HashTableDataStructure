@@ -1,0 +1,11 @@
+package Snippet;
+import java.util.*;
+
+public class ValidAnagram {
+	
+	public boolean isValidAnagram(String pattern, String text){
+		for()
+	}
+	
+	
+}

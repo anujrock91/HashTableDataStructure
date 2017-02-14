@@ -1,0 +1,8 @@
+package Snippet;
+
+public class ContainsDups {
+	
+	public boolean isDups(int nums[]){
+		
+	}
+}

@@ -1,0 +1,29 @@
+package Snippet;
+import java.util.*;
+
+public class LoggerRateLimiter {
+	private HashMap<String, Integer> messageSec = new HashMap<>();
+	
+	public boolean isPrintable(String message, int timeStamp){
+		if(!messageSec.containsKey(message)){ messageSec.put(message, timeStamp); return true; }
+		else{
+			int difference = (timeStamp-messageSec.get(message));
+			boolean decision = (difference >= 10)? true:false;
+			if(decision){ messageSec.put(message, timeStamp); }
+			return decision;
+		}
+	}
+	
+	public static void main(String args[]){
+		LoggerRateLimiter obj = new LoggerRateLimiter();
+		obj.isPrintable("foo", 1);
+		obj.isPrintable("bar", 2);
+		System.out.println(obj.isPrintable("foo", 3));
+		obj.isPrintable("bar", 8);
+		obj.isPrintable("foo", 10);
+		System.out.println(obj.isPrintable("foo", 11));
+		obj.isPrintable("foo", 19);
+		System.out.println(obj.isPrintable("foo", 21));
+		System.out.println(obj.isPrintable("foo", 22));
+	}
+}

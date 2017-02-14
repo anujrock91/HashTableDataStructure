@@ -1,0 +1,11 @@
+package Snippet;
+import java.util.*;
+
+public class IsoMorphicStrings {
+	
+	public boolean isIsoMorphic(String pattern, String text){
+		Hash
+	}
+	
+	
+}

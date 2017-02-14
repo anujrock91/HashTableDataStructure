@@ -1,0 +1,36 @@
+package Snippet;
+import java.util.Stack;
+
+public class MaximalAreaRectangle {
+	
+	
+	public int getMaxArea(int []nums){
+		int index = 0;
+		Stack<Integer> s = new Stack<>();
+		for(index=0;index<nums.length;index++){
+			int area = 0;
+			int num = nums[index];
+			//If empty stack
+			if(s.isEmpty()){ s.push(index); }
+			else{
+				if(num > nums[s.peek()]){
+					s.push(index);
+				}
+				else if(num < nums[s.peek()]){
+					while(!s.isEmpty() || nums[s.peek()]<num ){
+						int temp = s.pop();
+						if(s.isEmpty()){
+							area = nums[temp]*index;
+						}
+						else{
+							
+						}
+					}
+				}
+				else{
+					continue; 
+				}
+			}
+		}
+	}
+}

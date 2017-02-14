@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Snippet.MaximalAreaRectangle&apos; to &apos;MaximalAreaRectangleHistogram&apos;&#x0D;&#x0A;- Original project: &apos;MaximalAreaRectangleInHistogram&apos;&#x0D;&#x0A;- Original element: &apos;Snippet.MaximalAreaRectangle&apos;&#x0D;&#x0A;- Renamed element: &apos;Snippet.MaximalAreaRectangleHistogram&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MaximalAreaRectangle&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Snippet{MaximalAreaRectangle.java[MaximalAreaRectangle" matchStrategy="1" name="MaximalAreaRectangleHistogram" qualified="false" references="true" similarDeclarations="false" stamp="1485399849309" textual="false" version="1.0"/>
+</session>

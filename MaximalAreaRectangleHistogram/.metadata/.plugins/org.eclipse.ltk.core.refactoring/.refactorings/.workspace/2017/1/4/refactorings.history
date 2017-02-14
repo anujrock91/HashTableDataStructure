@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MaximalAreaRectangle&apos; to &apos;MaximalAreaRectangleInHistogram&apos;" description="Rename resource &apos;MaximalAreaRectangle&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/MaximalAreaRectangle" name="MaximalAreaRectangleInHistogram" stamp="1485399809092" updateReferences="true"/>
+</session>

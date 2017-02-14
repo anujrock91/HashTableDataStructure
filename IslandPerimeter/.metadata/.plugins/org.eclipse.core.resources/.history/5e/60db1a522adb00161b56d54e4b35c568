@@ -1,0 +1,43 @@
+package Snippet;
+
+public class IslandPerimeter {
+	 
+	public int islandPerimeter(int[][] grid) {
+		for(int row=grid.length-1;row>=0;row--){
+			for(int col = 0;col<grid[0].length;col++){
+				if(grid[row][col] == 1){ int perimeter = 0 ; DFS(grid, row, col, perimeter, null); return perimeter; }
+			}
+		}
+		return 0;
+	}
+	
+	public void DFS(int [][] mat, int row, int col, int perimeter, String direction){
+		if(row<0 || col<0 || row>mat.length || col>mat[0].length){  }
+		else if(mat[row][col] == 0 || mat[row][col] == -1){ }
+		else{
+			if(direction.equalsIgnoreCase("H")){ perimeter -= 1; }
+			mat[row][col] = -1;
+			if(isBorder(mat, row, col)){ 
+				perimeter +=4;
+				DFS(mat,row,col+1,perimeter, "H");
+				DFS(mat,row-1,col+1, perimeter, "D");
+				DFS(mat,row-1,col,perimeter, "H");
+				DFS(mat, row-1, col-1, perimeter, "D");
+				DFS(mat, row, col-1, perimeter, "H");
+				DFS(mat, row+1, col-1, perimeter, "D");
+				
+			}
+			mat[row][col] = 1;
+		}
+	}
+	
+	public boolean isBorder(int [][] mat, int row, int col){
+		int count = 0;
+		if(col-1 >= 0){ if(mat[row][col]==1 || mat[row][col] == -1){ ++count; } }
+		if(col+1 < mat[0].length){ if(mat[row][col+1] ==1 || mat[row][col+1]==-1){ ++count; }  }
+		if(row+1 < mat.length){ if(mat[row+1][col] ==1 || mat[row+1][col]==-1){ ++count; }  }
+		if(row-1 >=0){ if(mat[row-1][col] ==1 || mat[row-1][col]==-1){ ++count; }  }
+		return count==4?true:false;
+	}
+	
+}

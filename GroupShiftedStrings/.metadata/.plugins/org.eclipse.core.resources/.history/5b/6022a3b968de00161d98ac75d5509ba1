@@ -1,0 +1,30 @@
+package Snippet;
+import java.util.*;
+
+public class GroupShiftedStrings {
+	
+	public List<List<String>> getGroupShifted(String[] list){
+		HashMap<String, ArrayList<String>> patternMap = new HashMap<>();
+		for(String s: list){
+			String pattern = getPattern(s);
+			if(patternMap.containsKey(pattern)){
+				patternMap.get(pattern).add(s);
+			}
+			else{
+				ArrayList<String> group = new ArrayList<>();
+				patternMap.put(pattern, value)
+			}
+		}
+	}
+	
+	public String getPattern(String s){
+		String pattern = "";
+		for(int i=0;i<s.length()-1;i++){
+			char c1 = s.charAt(i);
+			char c2 = s.charAt(i+1);
+			pattern = pattern+(c2-c1)+"#";
+		}
+		return pattern;
+	}
+	
+}

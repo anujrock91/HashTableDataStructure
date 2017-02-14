@@ -1,0 +1,12 @@
+package Snippet;
+import java.util.*;
+
+public class ShortestWordDistance2 {
+	HashMap<String, ArrayList<Integer>> wordIndex = new HashMap<>();
+	
+	public ShortestWordDistance2(String [] arr){
+		for(int i=0;i<arr.length;i++){
+			wordIndex.put(arr[i], wordIndex.getOrDefault(arr[i], new ArrayList<Integer>()).add(i) );
+		}
+	}
+}

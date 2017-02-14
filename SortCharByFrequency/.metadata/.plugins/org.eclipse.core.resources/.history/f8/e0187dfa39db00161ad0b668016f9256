@@ -1,0 +1,27 @@
+package Snippet;
+import java.util.*;
+import java.util.Map.Entry;
+
+public class Sort {
+	
+	public String frequencySort(String s){
+		HashMap<Character, Integer> charCount = new HashMap<>();
+		int max = 0;
+		for(int i=0;i<s.length();i++){
+			char c = s.charAt(i);
+			if(charCount.containsKey(c)){ int value = charCount.remove(c); charCount.put(c, value+1); }
+			else{ charCount.put(c, 1); }
+			max = Math.max(max,charCount.get(c));
+		}
+		String [] record = new String[max+1];
+		for(Entry e: charCount.entrySet()){
+			String sTemp = constString(e.getValue(), e.getKey());
+			record[e.getValue()] = record[]
+		}
+	}
+	
+	public String constString(int count, char c){
+		return ;
+	}
+	
+}

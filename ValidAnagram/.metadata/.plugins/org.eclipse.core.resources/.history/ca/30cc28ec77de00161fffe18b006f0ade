@@ -1,0 +1,8 @@
+package Snippet;
+
+public class ValidAnagram {
+	
+	public boolean isValidAnagram(String pattern, String text){
+		
+	}
+}

@@ -1,0 +1,8 @@
+package Snippet;
+
+public class IsoMorphicStrings {
+	
+	public boolean isIsoMorphic(String pattern, String text){
+		
+	}
+}

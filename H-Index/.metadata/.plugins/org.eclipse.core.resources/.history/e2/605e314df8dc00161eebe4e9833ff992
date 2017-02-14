@@ -1,0 +1,17 @@
+package Snippet;
+
+public class HIndex {
+	
+	public int getHIndex(int []papers){
+		int max = Integer.MIN_VALUE;
+		for(int i: papers){
+			max = Math.max(i, max);
+		}
+		
+		int [] HIndexArr = new int[max+1];
+		for(int i: papers){
+			HIndexArr[i] += 1;
+		}
+	}
+	
+}

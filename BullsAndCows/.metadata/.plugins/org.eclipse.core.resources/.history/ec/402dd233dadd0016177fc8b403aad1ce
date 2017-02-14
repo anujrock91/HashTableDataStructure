@@ -1,0 +1,43 @@
+package Snippet;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.HashMap;
+
+public class BullsAndCows {
+	
+	public String getHint(String secret, String guess){
+		HashMap<Integer,HashSet<Integer>> numberMap = new HashMap<>();
+		for(int i=0;i<secret.length();i++){
+			int a = (secret.charAt(i)-'0');
+			if(numberMap.containsKey(a)){ numberMap.get(a).add(i); }
+			else{ 
+				HashSet<Integer>newSet = new HashSet<>(); newSet.add(i); 
+				numberMap.put(a, newSet); 
+			} 
+		}
+		
+		int bulls = 0;
+		int cows  = 0;
+		//for bulls
+		for(int i=0;i<guess.length();i++){
+			int a = (guess.charAt(i)-'0');
+			if(numberMap.containsKey(a)){
+				if(numberMap.get(a).contains(i)){ ++bulls; numberMap.get(a).remove(i); }
+			}
+		}
+		
+		//for cows
+		
+		
+		return bulls+"A"+cows+"B";
+	}
+	
+	
+	public static void main(String args[]){
+		System.out.println(new BullsAndCows().getHint("1110", "2101"));
+	}
+	
+	
+	
+	
+}

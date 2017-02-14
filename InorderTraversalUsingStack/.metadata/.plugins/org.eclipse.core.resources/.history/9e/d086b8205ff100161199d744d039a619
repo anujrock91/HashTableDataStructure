@@ -1,0 +1,25 @@
+package Snippet;
+import java.util.*;
+public class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        if(root == null){ return new ArrayList(); }
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<TreeNode> visited = new Stack<TreeNode>();
+        ArrayList<Integer> result= new ArrayList<Integer>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            TreeNode temp = stack.pop();
+            if(visited.isEmpty() || visited.peek() != temp){
+                if(temp.right !=null){ stack.push(temp.right); }
+                stack.push(temp);
+                visited.push(temp);
+                if(temp.left != null){ stack.push(temp.left); }
+            }
+            else{
+                result.add(temp.val);
+                visited.pop();
+            }
+        }
+        return result;
+    }
+}

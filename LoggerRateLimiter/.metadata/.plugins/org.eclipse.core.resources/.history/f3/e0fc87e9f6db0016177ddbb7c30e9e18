@@ -1,0 +1,14 @@
+package Snippet;
+import java.util.*;
+
+public class LoggerRateLimiter {
+	private HashMap<String, Integer> messageSec = new HashMap<>();
+	
+	public boolean isPrintable(String message, int timeStamp){
+		if(!messageSec.containsKey(message)){ messageSec.put(message, timeStamp); return true; }
+		else{
+			int difference = (timeStamp-messageSec.get(message));
+			difference > 10?messageSec.put(message, timeStamp):false; 
+		}
+	}
+}

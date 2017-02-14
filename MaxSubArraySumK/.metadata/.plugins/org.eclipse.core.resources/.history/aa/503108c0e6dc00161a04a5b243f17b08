@@ -1,0 +1,8 @@
+package Snippet;
+
+public class MaxSubArraySumK {
+	
+	public int maxSubArraySumK(int []nums, int k){
+		
+	}
+}

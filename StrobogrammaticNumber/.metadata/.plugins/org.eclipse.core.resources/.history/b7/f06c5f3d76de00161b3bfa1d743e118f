@@ -1,0 +1,31 @@
+package Snippet;
+
+public class StroboGrammaticNum {
+	
+	public boolean isSGN(int num){
+		String s = ""+num;
+		int left=0;
+		int right=s.length()-1;
+		while(left<right){
+			int num1 = s.charAt(left)-'0';
+			int num2 = s.charAt(right)-'0';
+			if(num1!=0 || num1!=1 || num1!=6 || num1!=8 || num1!=9 || num2!=1 || num2!=0
+					|| num2!=6 || num2!=8 || num2!=9){
+				return false;
+			}
+			else{
+				if(num1==1 && num2==1){ ++left; --right; }
+				else if(num1==0 && num2==0){ ++left; --right; }
+				else if(num1==6 && num2==9 ){ ++left; --right; }
+				else if(num1==8 && num2==8){ ++left; --right; }
+				else if(num1==9 && num2==6){ ++left; --right; }
+				else{ return false; }
+			}
+		}
+		if(left > right){return true; }
+		else{ 
+			int numLast = s.charAt(left)-'0';
+			if()
+		}
+	}
+}

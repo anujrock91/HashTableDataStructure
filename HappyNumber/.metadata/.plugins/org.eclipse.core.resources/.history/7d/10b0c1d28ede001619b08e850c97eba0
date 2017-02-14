@@ -1,0 +1,32 @@
+package Snippet;
+import java.util.*;
+
+public class HappyNumber {
+	
+	public boolean isHappy(int n){
+		System.out.println("-------------------");
+		int temp = n;
+		HashSet<Integer> set = new HashSet<>();
+		while(temp != 1){
+			String s = ""+temp;
+			temp = 0;
+			for(int i=0;i<s.length();i++){
+				int num = s.charAt(i)-'0';
+				System.out.print("+"+num + "*" + num);
+				temp = (temp+(num*num));
+			}
+			System.out.println();
+			if(set.contains(temp)){ return false; }
+			else{ set.add(temp); }
+		}
+		System.out.println("-------------------");
+		return true;
+	}
+	
+	
+	public static void main(String args[]){
+		for(int i=0;i<100;i++){
+			System.out.println(i+" : "+ new HappyNumber().isHappy(i));
+		}
+	}
+}

@@ -1,0 +1,9 @@
+package Snippet;
+import java.util.*;
+
+public class MaxSubArraySumK {
+	
+	public int maxSubArraySumK(int []nums, int k){
+		for(int i =0;i<)
+	}
+}

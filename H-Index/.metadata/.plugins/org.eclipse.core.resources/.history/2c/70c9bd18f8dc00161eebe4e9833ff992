@@ -1,0 +1,9 @@
+package Snippet;
+
+public class HIndex {
+	
+	public int getHIndex(int []papers){
+		
+	}
+	
+}

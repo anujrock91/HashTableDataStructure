@@ -1,0 +1,29 @@
+package Snippet;
+import java.util.*;
+
+public class UniqueWordAbbrevation {
+	private HashMap<String,Boolean> wordUnique;
+	private HashSet<String> words;
+	
+	public UniqueWordAbbrevation(String [] list){
+		wordUnique = new HashMap<>();
+		words = new HashSet<>();
+		for(String s: list){
+			words.add(s);
+		}
+		
+		for(String s: words){
+			String abbrevation = "";
+			if(s.length() <=2){
+				abbrevation = s;
+				System.out.println(abbrevation);
+			}
+			else{
+				abbrevation = (abbrevation + s.charAt(0)+ (s.length()-2) + s.charAt(s.length()-1));
+				System.out.println(abbrevation);
+			}
+			boolean dec = (wordUnique.containsKey(abbrevation))?wordUnique.put(abbrevation, false):wordUnique.put(abbrevation,true);
+		}
+		
+	}
+}

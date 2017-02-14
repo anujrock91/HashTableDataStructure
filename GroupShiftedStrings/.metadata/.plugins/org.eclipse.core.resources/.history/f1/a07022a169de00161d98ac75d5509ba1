@@ -1,0 +1,45 @@
+package Snippet;
+import java.util.*;
+import java.util.Map.Entry;
+
+public class GroupShiftedStrings {
+	
+	public List<List<String>> getGroupShifted(String[] list){
+		HashMap<String, ArrayList<String>> patternMap = new HashMap<>();
+		for(String s: list){
+			String pattern = getPattern(s);
+			if(patternMap.containsKey(pattern)){
+				patternMap.get(pattern).add(s);
+			}
+			else{
+				ArrayList<String> group = new ArrayList<>();
+				group.add(s);
+				patternMap.put(pattern, group);
+			}
+		}
+		ArrayList<List<String>> result = new ArrayList<>();
+		for(Entry <String, ArrayList<String>> e: patternMap.entrySet()){
+			result.add(e.getValue());
+		}
+		return result;
+	}
+	
+	public String getPattern(String s){
+		String pattern = "";
+		for(int i=0;i<s.length()-1;i++){
+			char c1 = s.charAt(i);
+			char c2 = s.charAt(i+1);
+			int diff = c2-c1;
+			if(diff < 0){ }
+			pattern = pattern+(c2-c1)+"#";
+		}
+		return pattern;
+	}
+	
+	
+	public static void main(String args[]){
+		List<List<String>> l = new GroupShiftedStrings().getGroupShifted(new String[]{"abc",
+				"bcd","xyz", });
+	}
+	
+}

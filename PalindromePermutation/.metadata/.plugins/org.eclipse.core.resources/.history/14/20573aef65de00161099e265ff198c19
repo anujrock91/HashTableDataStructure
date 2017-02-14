@@ -1,0 +1,14 @@
+package Snippet;
+
+public class PalindromePermutation {
+	
+	public boolean isPalindromePermutation(String s){
+		
+	}
+	
+	public int getCharNumber(char c){
+		return c-'a';
+	}
+	
+	
+}

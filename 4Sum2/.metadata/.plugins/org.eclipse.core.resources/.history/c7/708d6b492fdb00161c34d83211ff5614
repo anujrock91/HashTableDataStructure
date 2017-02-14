@@ -1,0 +1,7 @@
+package Snippet;
+import java.util.*;
+
+public class FourSum2 {
+	
+	public int fourSumCount()
+}

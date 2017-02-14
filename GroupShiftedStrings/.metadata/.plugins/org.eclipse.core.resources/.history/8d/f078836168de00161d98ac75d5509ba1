@@ -1,0 +1,21 @@
+package Snippet;
+
+public class GroupShiftedStrings {
+	
+	public List<List<String>> getGroupShifted(String[] list){
+		for(String s: list){
+			
+		}
+	}
+	
+	public String getPattern(String s){
+		String pattern = "";
+		for(int i=0;i<s.length()-1;i++){
+			char c1 = s.charAt(i);
+			char c2 = s.charAt(i+1);
+			pattern = pattern+(c2-c1)+"#";
+		}
+		return pattern;
+	}
+	
+}
